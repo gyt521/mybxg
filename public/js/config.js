@@ -6,8 +6,10 @@ requirejs.config({
 		cookie : 'jquery-cookie/jquery.cookie',
 		template : 'artTemplate/template-web',
 		teacher: '../js/teacher-list',
+		index : '../js/index',
 		common : '../js/common',
-		login : '../js/login'
+		login : '../js/login',
+		util : '../js/util'
 	},
 	shim : {
 		bootstrap : {

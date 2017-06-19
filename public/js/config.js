@@ -12,11 +12,16 @@ requirejs.config({
 		form : 'jquery-form/jquery.form',
 		datepicker : 'bootstrap-datepicker/js/bootstrap-datepicker.min',
 		language : 'bootstrap-datepicker/locales/bootstrap-datepicker.zh-CN.min',
+		uploadify : 'uploadify/jquery.uploadify.min',
+		region : 'jquery-region/jquery.region',
+		ckeditor : 'ckeditor/ckeditor',
 		index : '../js/index',
 		common : '../js/common',
 		login : '../js/login',
 		util : '../js/util',
+		settings : '../js/settings',
 		courseadd : '../js/course-add'
+
 	},
 	shim : {
 		bootstrap : {
@@ -27,6 +32,12 @@ requirejs.config({
 		},
 		language : {
 			deps : ['jquery','datepicker']
+		},
+		uploadify : {
+			deps : ['jquery']
+		},
+		ckeditor : {
+			exports : 'CKEDITOR'
 		}
 	}
 });

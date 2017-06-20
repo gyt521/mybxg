@@ -20,6 +20,7 @@ requirejs.config({
 		login : '../js/login',
 		util : '../js/util',
 		settings : '../js/settings',
+		courselist : '../js/course-list',
 		courseadd : '../js/course-add'
 
 	},

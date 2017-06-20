@@ -14,11 +14,17 @@ define(['jquery','template','ckeditor','util','datepicker','language','uploadify
 
 			// 处理头像上传
 			$('#upfile').uploadify({
-				fileObjName : 'tc_avatar',
+				itemTemplate:'<span></span>',
+				width : '120',
+				height : '120',
+				buttonText : '',
+				fileObjName : 'tc_avatar',  //需要的参数
 				swf : '/public/assets/uploadify/uploadify.swf',
 				uploader : '/api/uploader/avatar',
 				onUploadSuccess : function (file,data) {
-					console.log(data);
+					// console.log(data);
+					data = JSON.parse(data);
+					$('.preview img:eq(0)').attr('src', data.result.path);
 				}
 			});
 

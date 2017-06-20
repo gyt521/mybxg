@@ -21,7 +21,8 @@ requirejs.config({
 		util : '../js/util',
 		settings : '../js/settings',
 		courselist : '../js/course-list',
-		courseadd : '../js/course-add'
+		courseadd : '../js/course-add',
+		coursebasic : '../js/course-basic'
 
 	},
 	shim : {

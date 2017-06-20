@@ -3,14 +3,17 @@ define(['jquery','util','validate','form'],function ($,util) {
 	util.setMenu(location.pathname);
 
 	$('#courseAddForm').validate({
-		sendForm : false;
+		sendForm : false,
 		valid : function () {
-			type : 'post',
-			url : '/api/course/create',
-			success : function(date) {
-				// 创建课程之后跳转到下一步
-				location.href = '/course/basic?cs_id=' + data.result.cs_id; 
-			}
+			$(this).ajaxSubmit({
+				type : 'post',
+				url : '/api/course/create',
+				success : function(data) {
+					// console.log(data);
+					// 创建课程之后跳转到下一步
+					location.href = '/course/basic?cs_id=' + data.result.cs_id; 
+				}
+			});
 		}
 	});
 });

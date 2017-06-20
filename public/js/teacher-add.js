@@ -1,43 +1,43 @@
 define(['jquery','util','template','validate','form','datepicker','language'],function ($,util,template) {
 	// 设置导航选中
-	util.setMenu('/teacher/list');
+	util.setMenu(location.pathname);
 	// 提交表单处理
 	function submitForm(url) {
 		$('#addTeacherForm').validate({
-				sendForm : false,
-				eachInvalidField : function () {
-					console.log(1);
-				},
-				eachValidField : function () {
-					console.log(2);
-				},
-				valid : function () {
-					// console.log(3);
-					// 提交表单
-					$(this).ajaxSubmit({
-						type : 'post',
-						url : url,
-						success : function (data) {
-							console.log(data);
-						}
-					});
-				},
-				description : {
-	                tcName : {
-	                    required : '姓名必须填写',
-	                    valid : '姓名格式正确'
-	                },
-	                tcPass : {
-	                    required : '密码不能为空',
-	                    pattern : '密码必须是六位数字',
-	                    valid : '密码可以使用'
-	                },
-	                tcJoinDate : {
-	                    required : '入职日期不能为空',
-	                    valid : '日期可以使用'
-	                }
-	            }
-			});
+			sendForm : false,
+			eachInvalidField : function () {
+				console.log(1);
+			},
+			eachValidField : function () {
+				console.log(2);
+			},
+			valid : function () {
+				// console.log(3);
+				// 提交表单
+				$(this).ajaxSubmit({
+					type : 'post',
+					url : url,
+					success : function (data) {
+						console.log(data);
+					}
+				});
+			},
+			description : {
+                tcName : {
+                    required : '姓名必须填写',
+                    valid : '姓名格式正确'
+                },
+                tcPass : {
+                    required : '密码不能为空',
+                    pattern : '密码必须是六位数字',
+                    valid : '密码可以使用'
+                },
+                tcJoinDate : {
+                    required : '入职日期不能为空',
+                    valid : '日期可以使用'
+                }
+            }
+		});
 		// $('#addTeacherBtn').click(function () {
 			// $.ajax({
 			// 	type : 'post',
